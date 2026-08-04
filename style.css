@@ -6,7 +6,7 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(4, 9, 30, 0.3),rgba(4, 9, 30, 0.5)), url(./images/i3.jpg);
+    background-image: linear-gradient(rgba(4, 9, 30, 0.3),rgba(4, 9, 30, 0.5)), url(./images/A_Campus.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -16,18 +16,22 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 1% 4%;
+    background: #fff3f3;
+    color: #000;
+    position: sticky;
+    top: 0;
 }
 nav .logo{
     font-size: 15px;
     font-family: sans-serif;
     font-weight: 600;
-    color: #fff3f3;
+    color: #000;
     cursor: pointer;
 }
-nav .nav-links{
+/*nav .nav-links{
     flex: 1;
-    text-align: right;
-}
+    text-align: center;
+}*/
 .nav-links ul li{
     list-style: none;
     display: inline-block;
@@ -48,9 +52,12 @@ nav .nav-links{
 }
 .nav-links ul li a{
     text-decoration: none;
-    color: #fff3f3;
+    color: #000;
     font-size: 15px;
     font-family: sans-serif;
+}
+.nav-links ul li a.active{
+    color: #f44366;
 }
 
 /*Text box style*/
@@ -114,6 +121,7 @@ p{
 .row{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 5%;
 }
 .course-col{
@@ -296,7 +304,7 @@ h3{
 .sub-header{
     width: 100%;
     height: 50vh;
-    background: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url(../images/i14.jpg);
+    background: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url(./images/i14.jpg);
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -339,19 +347,21 @@ h3{
 /*.........blog........*/
 
 .blog-content{
-    width: 89%;
-    margin: auto;
-    padding: 60px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    padding: 60px;
+}
+.blog-content .row{
+    gap: 20px;
 }
 .blog-left{
-    flex-basis: 50%;
-    padding: 20px 25px;
+    padding: 20px;
 }
 .blog-left img{
     width: 100%;
+    height: 100%;
+    max-height: 500px;
+    height: auto;
+    display: block;
 }
 .blog-left h2{
     color: #222;
@@ -402,4 +412,79 @@ h3{
     margin: 10px 0;
     border: 1px solid #f44366;
     color: #f44366;
+}
+
+
+/*___________toggle bar formulation_____________*/
+
+.togggle {
+    width: 25px;
+    height: 25px; 
+    background-color: transparent; 
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 3px;
+    cursor: pointer;
+}
+
+.togggle span {
+    width: 100%;
+    height: 3px;
+    background: #000;
+    border-radius: 3px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.togggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.togggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.togggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/*content and mobile device optimisation*/
+
+@media screen and (max-width: 800px) {
+    nav .nav-links{
+        display: none;
+    }
+/* Base hidden state */
+nav .nav-links {
+    display: none;
+}
+
+nav .nav-links.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 20px;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 50%;
+    background: #fff;
+    border-bottom: 2px solid hsla(0, 31%, 10%, 0.785);
+    height: 100vh;
+    z-index: 10;
+}
+nav .nav-links.active ul li{
+    display: block !important;
+    margin: 10px 0;
+    /*border-bottom: 2px solid #f44366;*/
+    width: 100%;
+}
+    .togggle{
+        display: flex;
+    }
+    .row{
+        display: block;
+    }
 }

@@ -5,21 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Website Mockup</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/bootstrap-icons/bootstrap-icons.min.css">
 </head>
 <body>
-    
+    <!--______________Important floating left message________________--
+    <marquee behavior="scroll" direction="right">
+        <style>
+            .content-marquee ul{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 20px;
+                padding: 10px;
+            }
+            .content-marquee ul li{
+                font-size: 15px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+        </style>
+        <div class="content-marquee">
+            <ul>
+                <li>General education</li>
+                <li>Technical education</li>
+                <li>francophone section</li>
+                <li>anglophone section</li>
+            </ul>
+        </div>
+    </marquee>
+    -->
     <!--........Creating the header section.........-->
     <section class="header">
         <nav>
-            <div class="logo">School Logo Here</div>
+            <div class="logo">CPB Les Aiglons</div>
             <div class="nav-links">
                 <ul>
-                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html" class="active">Home</a></li>
                     <li><a href="./files/about.html">About</a></li>
                     <li><a href="./files/courses.html">Courses</a></li>
                     <li><a href="./files/blog.html">Blog</a></li>
                     <li><a href="./files/contact.html">Contact</a></li>
                 </ul>
+            </div>
+            <div class="togggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
 
@@ -33,7 +64,10 @@
     <!--..............Courses............-->
 
     <section class="courses">
-        <h1>Courses that we offer</h1>
+        <h1>
+            <i class="bi bi-mortarboard" style="text-align: center; color: #f44366;"></i>
+            Courses that we offer
+        </h1>
         <p>Using an advanced quality scoring algorithm and Machine Learning.</p>
 
         <div class="row">
@@ -207,5 +241,7 @@
         </div>
         <p class="lastP">Made with <span>love</span> by BL-Codes. All Rights Reserved</p>
     </section>
+
+    <script src="./script/index.js"></script>
 </body>
 </html>
